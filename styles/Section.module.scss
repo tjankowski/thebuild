@@ -1,0 +1,22 @@
+@use "colors" as colors;
+
+.section {
+  width: 100%;
+  padding: 4em 0;
+  margin: 4em 0;
+
+  &_gray {
+    background: colors.$lightGray;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 0 0 1.6em;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

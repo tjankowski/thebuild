@@ -1,0 +1,62 @@
+@use "colors" as colors;
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  // justify-self: center;
+
+  &_horizontal {
+    flex-direction: row;
+    grid-column: span 6;
+    padding: 2em;
+
+    & > .image {
+      margin: 0;
+    }
+
+    & > .content {
+      margin: 1.5em;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: 0.5em;
+  }
+}
+
+.footer {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.date {
+  font-size: 0.875em;
+  color: colors.$darkBlue;
+}
+
+.subtitle {
+  font-size: 0.75em;
+  color: colors.$green;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  background: rgb(248, 245, 245);
+  margin-bottom: 1em;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
