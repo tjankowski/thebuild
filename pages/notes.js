@@ -6,7 +6,7 @@ import layoutStyles from "styles/Layout.module.scss";
 import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
-import { getAllPosts } from "lib/api";
+import { getAll, TYPES } from "lib/api";
 
 export default function Notes({ notes }) {
   return (
@@ -37,7 +37,7 @@ export default function Notes({ notes }) {
 }
 
 export async function getStaticProps() {
-  const notes = getAllPosts(["title", "date", "category"]);
+  const notes = getAll(TYPES.NOTES, ["title", "date", "category"]);
 
   return {
     props: { notes },

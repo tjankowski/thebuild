@@ -8,7 +8,7 @@ import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
 
-export default function Lab() {
+export default function Lab({ projects }) {
   return (
     <Layout>
       <Grid className={layoutStyles.container}>
@@ -18,12 +18,13 @@ export default function Lab() {
       </Grid>
       <Section>
         <div className={layoutStyles.grid}>
-          {Array.from({ length: 10 }, (v, k) => k).map((item, index) => (
+          {projects.map((item, index) => (
             <Tile
               key={index}
               tile={{
-                title: `Title ${index}`,
-                image: "/public/images/2019.jpg",
+                title: item.title,
+                subtitle: item.category,
+                date: item.date,
               }}
               className={tileStyles.tile_horizontal}
             />
@@ -32,4 +33,12 @@ export default function Lab() {
       </Section>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const projects = getAll(TYPES.LAB, ["title", "date", "category"]);
+
+  return {
+    props: { projects },
+  };
 }
