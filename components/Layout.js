@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>TheBuild | Tom Jankowski</title>
+        <title>TheBuild &#65372; Tom Jankowski</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
