@@ -9,6 +9,10 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 2rem;
+
+  &__half {
+    grid-column: span 6;
+  }
 }
 
 .grid3 {
@@ -42,6 +46,7 @@
 }
 
 .footer {
+  margin-top: 8em;
   padding: 4em 0;
   display: flex;
   justify-content: space-between;
