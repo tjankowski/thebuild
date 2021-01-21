@@ -7,6 +7,7 @@ import sectionStyles from "styles/Section.module.scss";
 import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
+import { getAll, TYPES } from "lib/api";
 
 export default function Lab({ projects }) {
   return (
@@ -25,6 +26,7 @@ export default function Lab({ projects }) {
                 title: item.title,
                 subtitle: item.category,
                 date: item.date,
+                link: item.link,
               }}
               className={tileStyles.tile_horizontal}
             />
@@ -36,7 +38,7 @@ export default function Lab({ projects }) {
 }
 
 export async function getStaticProps() {
-  const projects = getAll(TYPES.LAB, ["title", "date", "category"]);
+  const projects = getAll(TYPES.LAB, ["title", "date", "category", "link"]);
 
   return {
     props: { projects },

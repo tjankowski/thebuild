@@ -9,8 +9,10 @@ import sectionStyles from "styles/Section.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
 import { getAll, TYPES } from "lib/api";
+import { sortByDate } from "lib/common";
+import Link from "next/link";
 
-export default function Home({ projects, notes }) {
+export default function Home({ projects, notes, latest }) {
   return (
     <Layout>
       <Grid className={layoutStyles.container}>
@@ -31,8 +33,16 @@ export default function Home({ projects, notes }) {
       </Grid>
       <Section className={sectionStyles.section_gray} title="Lastest updates">
         <div className={layoutStyles.grid3}>
-          {[1, 2, 3].map((item, index) => (
-            <Tile key={index} tile={{ title: `Title ${index}` }} />
+          {latest.map((item, index) => (
+            <Tile
+              key={index}
+              tile={{
+                title: item.title,
+                subtitle: item.category,
+                date: item.date,
+                link: item.link,
+              }}
+            />
           ))}
         </div>
       </Section>
@@ -46,10 +56,15 @@ export default function Home({ projects, notes }) {
                   title: item.title,
                   subtitle: item.category,
                   date: item.date,
+                  link: item.link,
                 }}
-                className={tileStyles.tile_horizontal}
               />
             ))}
+            <div className={commonStyles.center}>
+              <Link href="/lab">
+                <a className={commonStyles.highlight}>Find out more</a>
+              </Link>
+            </div>
           </div>
         </Section>
       )}
@@ -63,10 +78,15 @@ export default function Home({ projects, notes }) {
                   title: item.title,
                   subtitle: item.category,
                   date: item.date,
+                  link: item.link,
                 }}
-                className={tileStyles.tile_horizontal}
               />
             ))}
+            <div className={commonStyles.center}>
+              <Link href="/notes">
+                <a className={commonStyles.highlight}>Find out more</a>
+              </Link>
+            </div>
           </div>
         </Section>
       )}
@@ -75,10 +95,12 @@ export default function Home({ projects, notes }) {
 }
 
 export async function getStaticProps() {
-  const projects = getAll(TYPES.LAB, ["title", "date", "category"]);
-  const notes = getAll(TYPES.NOTES, ["title", "date", "category"]);
+  const projects = getAll(TYPES.LAB, ["title", "date", "category", "link"], 5);
+  const notes = getAll(TYPES.NOTES, ["title", "date", "category", "link"], 5);
+
+  const latest = [...projects, ...notes].sort(sortByDate).slice(0, 3);
 
   return {
-    props: { projects, notes },
+    props: { projects, notes, latest },
   };
 }

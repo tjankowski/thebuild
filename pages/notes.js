@@ -26,6 +26,7 @@ export default function Notes({ notes }) {
                 title: item.title,
                 subtitle: item.category,
                 date: item.date,
+                link: item.link,
               }}
               className={tileStyles.tile_horizontal}
             />
@@ -37,7 +38,7 @@ export default function Notes({ notes }) {
 }
 
 export async function getStaticProps() {
-  const notes = getAll(TYPES.NOTES, ["title", "date", "category"]);
+  const notes = getAll(TYPES.NOTES, ["title", "date", "category", "link"]);
 
   return {
     props: { notes },
