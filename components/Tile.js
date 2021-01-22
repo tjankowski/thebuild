@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "styles/Tile.module.scss";
 
 const TileMock = {
   title: "Embrace the change",
@@ -15,8 +14,8 @@ export default function Tile({ tile, className }) {
   const { title, link, image, date, subtitle, stats } = tile;
   return (
     <Link href={link}>
-      <a className={clsx(styles.tile, className)}>
-        <div className={styles.image}>
+      <a className={clsx("tile", className)}>
+        <div className="tile__image">
           <Image
             src="/images/2019.jpg"
             alt={title}
@@ -25,17 +24,17 @@ export default function Tile({ tile, className }) {
             objectFit={true}
           />
         </div>
-        <div className={styles.content}>
-          <div className={styles.header}>
-            <div className={styles.title}>{title}</div>
+        <div className="tile__content">
+          <div className="tile__header">
+            <div className="tile__title">{title}</div>
             {subtitle && (
-              <div className={styles.subtitle}>
+              <div className="tile__subtitle">
                 {subtitle} from {new Date(date).toLocaleDateString()}
               </div>
             )}
           </div>
-          <div className={styles.footer}>
-            {stats && <div className={styles.stats}>{stats}</div>}
+          <div className="tile__footer">
+            {stats && <div className="tile__stats">{stats}</div>}
             <span>Read</span>
           </div>
         </div>

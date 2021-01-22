@@ -1,9 +1,6 @@
 import Grid from "components/Grid";
 import clsx from "clsx";
 import Layout from "components/Layout";
-import tileStyles from "styles/Tile.module.scss";
-import layoutStyles from "styles/Layout.module.scss";
-import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
 import { getAll, TYPES } from "lib/api";
@@ -11,14 +8,14 @@ import { getAll, TYPES } from "lib/api";
 export default function Notes({ notes }) {
   return (
     <Layout>
-      <Grid className={layoutStyles.container}>
-        <h1 className={commonStyles.headline}>
+      <Grid className="container">
+        <h1 className="headline">
           Notes, thoughts, subjective opinions, materials, and topics for
           discussion.
         </h1>
       </Grid>
       <Section>
-        <div className={layoutStyles.grid}>
+        <div className="grid">
           {notes.map((item, index) => (
             <Tile
               key={index}
@@ -28,7 +25,7 @@ export default function Notes({ notes }) {
                 date: item.date,
                 link: item.link,
               }}
-              className={tileStyles.tile_horizontal}
+              className="tile_horizontal"
             />
           ))}
         </div>

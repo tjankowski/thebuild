@@ -1,9 +1,8 @@
 import Link from "next/link";
-import styles from "styles/Layout.module.scss";
 
 export default function Navigation() {
   return (
-    <ul className={styles.navigation}>
+    <ul className="navigation">
       <li>
         <Link href="/notes">
           <a>Notes</a>

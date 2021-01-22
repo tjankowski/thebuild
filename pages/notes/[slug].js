@@ -1,11 +1,6 @@
 import Grid from "components/Grid";
 import clsx from "clsx";
 import Layout from "components/Layout";
-import tileStyles from "styles/Tile.module.scss";
-import layoutStyles from "styles/Layout.module.scss";
-import sectionStyles from "styles/Section.module.scss";
-import articleStyles from "styles/Article.module.scss";
-import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
 import { getAll, getBySlug, TYPES } from "lib/api";
@@ -16,10 +11,10 @@ import { toDate } from "lib/common";
 export default function Lab({ item }) {
   return (
     <Layout>
-      <Grid className={layoutStyles.container}>
-        <article className={articleStyles.article}>
+      <Grid className="container">
+        <article className="article">
           <h1>{item.title}</h1>
-          <div className={articleStyles.article__info}>
+          <div className="article__info">
             Published {toDate(item.date)} &#65372; 2min read
           </div>
           <div dangerouslySetInnerHTML={{ __html: item.content }} />

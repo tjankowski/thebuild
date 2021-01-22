@@ -1,10 +1,6 @@
 import Grid from "components/Grid";
 import clsx from "clsx";
 import Layout from "components/Layout";
-import tileStyles from "styles/Tile.module.scss";
-import layoutStyles from "styles/Layout.module.scss";
-import sectionStyles from "styles/Section.module.scss";
-import commonStyles from "styles/Common.module.scss";
 import Section from "components/Section";
 import Tile from "components/Tile";
 import { getAll, TYPES } from "lib/api";
@@ -12,13 +8,13 @@ import { getAll, TYPES } from "lib/api";
 export default function Lab({ projects }) {
   return (
     <Layout>
-      <Grid className={layoutStyles.container}>
-        <h1 className={commonStyles.headline}>
+      <Grid className="container">
+        <h1 className="headline">
           Playground for prototypes, concepts, and experiments.
         </h1>
       </Grid>
       <Section>
-        <div className={layoutStyles.grid}>
+        <div className="grid">
           {projects.map((item, index) => (
             <Tile
               key={index}
@@ -28,7 +24,7 @@ export default function Lab({ projects }) {
                 date: item.date,
                 link: item.link,
               }}
-              className={tileStyles.tile_horizontal}
+              className="tile_horizontal"
             />
           ))}
         </div>

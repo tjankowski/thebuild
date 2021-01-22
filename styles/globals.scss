@@ -1,3 +1,11 @@
+@use 'article';
+@use 'common';
+@use 'home';
+@use 'layout';
+@use 'logo';
+@use 'section';
+@use 'tile';
+
 html,
 body {
   padding: 0;

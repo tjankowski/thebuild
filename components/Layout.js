@@ -1,6 +1,5 @@
 import Head from "next/head";
 import clsx from "clsx";
-import styles from "styles/Layout.module.scss";
 import Logo from "components/Logo";
 import Navigation from "./Navigation";
 import Link from "next/link";
@@ -17,7 +16,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
       </Head>
-      <nav className={clsx(styles.header, styles.container)}>
+      <nav className={clsx("header", "container")}>
         <Link href="/">
           <a>
             <Logo />
@@ -28,12 +27,12 @@ export default function Layout({ children }) {
 
       <main>{children}</main>
 
-      <footer className={clsx(styles.footer, styles.container)}>
+      <footer className={clsx("footer", "container")}>
         <div>
-          <span className={styles.footer__logo}>TheBuild</span>
-          <span className={styles.footer__sign}>by Tomasz Jankowski</span>
+          <span className={"footer__logo"}>TheBuild</span>
+          <span className={"footer__sign"}>by Tomasz Jankowski</span>
         </div>
-        <ul className={styles.footer__links}>
+        <ul className={"footer__links"}>
           <li>
             <a
               href="https://www.linkedin.com/in/tom-jankowski/"
