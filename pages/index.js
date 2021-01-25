@@ -5,7 +5,8 @@ import Section from "components/Section";
 import Tile from "components/Tile";
 import { getAll, TYPES } from "lib/api";
 import { sortByDate } from "lib/common";
-import Link from "next/link";
+import TileLink from "components/TileLink";
+import TilesSection from "components/TilesSection";
 
 export default function Home({ projects, notes, latest }) {
   return (
@@ -20,65 +21,13 @@ export default function Home({ projects, notes, latest }) {
           This is my story.
         </div>
       </Grid>
-      <Section className="section_gray" title="Lastest updates">
-        <div className="grid3">
-          {latest.map((item, index) => (
-            <Tile
-              key={index}
-              tile={{
-                title: item.title,
-                subtitle: item.category,
-                date: item.date,
-                link: item.link,
-              }}
-            />
-          ))}
-        </div>
-      </Section>
-      {projects.length > 0 && (
-        <Section title="Ideas from lab">
-          <div className="grid3">
-            {projects.map((item, index) => (
-              <Tile
-                key={index}
-                tile={{
-                  title: item.title,
-                  subtitle: item.category,
-                  date: item.date,
-                  link: item.link,
-                }}
-              />
-            ))}
-            <div className="center">
-              <Link href="/lab">
-                <a className="highlight">Find out more</a>
-              </Link>
-            </div>
-          </div>
-        </Section>
-      )}
-      {notes.length > 0 && (
-        <Section title="Notes">
-          <div className="grid3">
-            {notes.map((item, index) => (
-              <Tile
-                key={index}
-                tile={{
-                  title: item.title,
-                  subtitle: item.category,
-                  date: item.date,
-                  link: item.link,
-                }}
-              />
-            ))}
-            <div className="center">
-              <Link href="/notes">
-                <a className="highlight">Find out more</a>
-              </Link>
-            </div>
-          </div>
-        </Section>
-      )}
+      <TilesSection
+        className="section_gray"
+        tiles={latest}
+        title="Latest updates"
+      />
+      <TilesSection tiles={projects} title="Ideas from lab" href="/lab" />
+      <TilesSection tiles={notes} title="Notes" href="/notes" />
     </Layout>
   );
 }
