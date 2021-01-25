@@ -29,7 +29,7 @@ export default function Tile({ tile, className }) {
             <div className="tile__title">{title}</div>
             {subtitle && (
               <div className="tile__subtitle">
-                {subtitle} from {new Date(date).toLocaleDateString()}
+                {subtitle} from {new Date(date).toLocaleDateString("en-US")}
               </div>
             )}
           </div>
