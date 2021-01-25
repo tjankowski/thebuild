@@ -1,0 +1,49 @@
+@use "colors" as colors;
+@use "variables" as var;
+
+.lab {
+  grid-column: 1 / span 12;
+
+  &__demo {
+    width: 100%;
+    height: 90vh;
+    border: 1px solid colors.$lightGray;
+    box-shadow: 0.5em 0.5em 2em 0 colors.$lightGray;
+    margin: 4em 0;
+
+    &_transparent {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "DM Serif Display", serif;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 4em 0 0.5em;
+    @include var.highlight(colors.$lightGreen);
+  }
+
+  h2 {
+    font-size: 1.5em;
+    @include var.highlight(colors.$lightGreen);
+  }
+
+  h3 {
+    font-size: 1em;
+    @include var.highlight(colors.$lightGreen);
+  }
+
+  a {
+    @include var.highlight;
+  }
+
+  p {
+    line-height: 1.4;
+  }
+}

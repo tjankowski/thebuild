@@ -11,7 +11,7 @@ export default function Lab({ item }) {
   return (
     <Layout>
       <Grid className="container">
-        <article className="article">
+        <article className="lab">
           <h1>{item.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: item.content }} />
         </article>
