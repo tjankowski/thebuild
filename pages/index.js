@@ -7,19 +7,13 @@ import { getAll, TYPES } from "lib/api";
 import { sortByDate } from "lib/common";
 import TileLink from "components/TileLink";
 import TilesSection from "components/TilesSection";
+import Headline from "components/Headline";
 
 export default function Home({ projects, notes, latest }) {
   return (
     <Layout>
       <Grid className="container">
-        <div className="headline">
-          I help build <span className="highlight">digital products</span> and{" "}
-          <span className={clsx("highlight", "highlight_green")}>
-            effective teams.
-          </span>
-          <br />
-          This is my story.
-        </div>
+        <Headline />
       </Grid>
       <TilesSection
         className="section_gray"
