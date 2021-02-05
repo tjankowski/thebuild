@@ -21,7 +21,6 @@ export default function Lab({ item }) {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params);
   const item = getBySlug(TYPES.LAB, params.slug, [
     "title",
     "date",
