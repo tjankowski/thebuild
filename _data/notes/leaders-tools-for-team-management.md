@@ -1,8 +1,9 @@
 ---
 title: "Leaders tools for team management"
-excerpt: "For last 4 years I had oportunity"
+excerpt: ""
 date: "2020-03-16T05:35:07.322Z"
-category: "Post"
+category: ["Post"]
+tags: ["tools", "leadership"]
 ---
 
 1. Context & introduction

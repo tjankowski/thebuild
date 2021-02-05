@@ -3,7 +3,7 @@ title: "Documenting 1on1s"
 excerpt: ""
 date: "2020-03-16T05:35:07.322Z"
 category: ["Post"]
-tags: ["Tools", "1on1"]
+tags: ["tools", "1on1"]
 ---
 
 I started using 1on1s as one of my basic leadership tools short after starting my first role as a leader. At that time our company was growing fast. We quickly growth from 6 people to around 60. Our team was based on the senior consultants who could run projects by themselves or in small experienced teams. Our structure was flat. Just three founders and rest software consultants. Without HR. Without middle managers.
