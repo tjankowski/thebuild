@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Layout from "components/Layout";
 import Section from "components/Section";
 import Tile from "components/Tile";
-import { getAll, getBySlug, TYPES } from "lib/api";
+import { getBySlug, getPublished, TYPES } from "lib/api";
 import { sortByDate } from "lib/common";
 import Headline from "components/Headline";
 import Container from "components/Container";
@@ -41,8 +41,16 @@ export default function Home({ latest, content }) {
 }
 
 export async function getStaticProps() {
-  const projects = getAll(TYPES.LAB, ["title", "date", "category", "link"], 5);
-  const notes = getAll(TYPES.NOTES, ["title", "date", "category", "link"], 5);
+  const projects = getPublished(
+    TYPES.LAB,
+    ["title", "date", "category", "link"],
+    5
+  );
+  const notes = getPublished(
+    TYPES.NOTES,
+    ["title", "date", "category", "link"],
+    5
+  );
   const item = getBySlug(TYPES.STATIC, "about", ["content"]);
   const content = await markdownToHtml(item.content || "");
 

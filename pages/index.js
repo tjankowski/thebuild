@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Layout from "components/Layout";
 import Section from "components/Section";
 import Tile from "components/Tile";
-import { getAll, TYPES } from "lib/api";
+import { getPublished, TYPES } from "lib/api";
 import { sortByDate } from "lib/common";
 import TileLink from "components/TileLink";
 import TilesSection from "components/TilesSection";
@@ -27,8 +27,16 @@ export default function Home({ projects, notes, latest }) {
 }
 
 export async function getStaticProps() {
-  const projects = getAll(TYPES.LAB, ["title", "date", "category", "link"], 5);
-  const notes = getAll(TYPES.NOTES, ["title", "date", "category", "link"], 5);
+  const projects = getPublished(
+    TYPES.LAB,
+    ["title", "date", "category", "link"],
+    5
+  );
+  const notes = getPublished(
+    TYPES.NOTES,
+    ["title", "date", "category", "link"],
+    5
+  );
 
   const latest = [...projects, ...notes].sort(sortByDate).slice(0, 3);
 
