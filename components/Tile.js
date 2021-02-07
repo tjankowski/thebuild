@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { toDate } from "lib/common";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,11 +28,7 @@ export default function Tile({ tile, className }) {
         <div className="tile__content">
           <div className="tile__header">
             <div className="tile__title">{title}</div>
-            {subtitle && (
-              <div className="tile__subtitle">
-                {subtitle} from {new Date(date).toLocaleDateString("en-US")}
-              </div>
-            )}
+            {subtitle && <div className="tile__subtitle">{toDate(date)}</div>}
           </div>
           <div className="tile__footer">
             {stats && <div className="tile__stats">{stats}</div>}
