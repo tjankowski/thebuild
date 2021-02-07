@@ -4,6 +4,18 @@
 .highlight {
   @include var.highlight(colors.$lightOrange);
 
+  &_lightGreen {
+    @include var.highlight-color(colors.$lightGreen);
+  }
+
+  &_grayBlue {
+    @include var.highlight-color(colors.$grayBlue);
+  }
+
+  &_accentBlue {
+    @include var.highlight-color(colors.$accentBlue);
+  }
+
   &_hover {
     cursor: pointer;
     &::before {

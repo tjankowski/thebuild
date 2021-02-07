@@ -15,3 +15,9 @@
     background: $color;
   }
 }
+
+@mixin highlight-color($color: colors.$lightBlue) {
+  &::before {
+    background: $color;
+  }
+}

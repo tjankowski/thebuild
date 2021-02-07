@@ -16,9 +16,46 @@ Static highlight
 </div>
 
 <div class="grid__half center">
+<span class="type-2x highlight highlight_lightGreen">
+Static highlight
+</span>
+</div>
+
+<div class="grid__half center">
+<span class="type-2x highlight highlight_grayBlue">
+Static highlight
+</span>
+</div>
+
+<div class="grid__half center">
+<span class="type-2x highlight highlight_accentBlue">
+Static highlight
+</span>
+</div>
+
+<div class="grid__half center">
 <span class="type-2x highlight highlight_hover">
 Hover highlight
 </span>
 </div>
+
+<div class="grid__half center">
+<span class="type-2x highlight highlight_lightGreen highlight_hover">
+Hover highlight
+</span>
+</div>
+
+<div class="grid__half center">
+<span class="type-2x highlight highlight_grayBlue highlight_hover">
+Hover highlight
+</span>
+</div>
+
+<div class="grid__half center">
+<span class="type-2x highlight  highlight_accentBlue highlight_hover">
+Hover highlight
+</span>
+</div>
+
 </div>
 </section>
