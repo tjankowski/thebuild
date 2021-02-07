@@ -6,16 +6,16 @@ import Tile from "components/Tile";
 import { getAll, getBySlug, TYPES } from "lib/api";
 import markdownToHtml from "lib/markdownToHtml";
 import Container from "components/Container";
-import { toDate } from "lib/common";
+import { calculateReadingTime, toDate } from "lib/common";
 
-export default function Lab({ item }) {
+export default function Notes({ item, readingTime }) {
   return (
     <Layout>
       <Grid className="container">
         <article className="article">
           <h1>{item.title}</h1>
           <div className="article__info">
-            Published {toDate(item.date)} &#65372; 2min read
+            {toDate(item.date)} &#65372; {readingTime} min read
           </div>
           <div dangerouslySetInnerHTML={{ __html: item.content }} />
         </article>
@@ -32,6 +32,7 @@ export async function getStaticProps({ params }) {
     "content",
   ]);
   const content = await markdownToHtml(item.content || "");
+  const readingTime = calculateReadingTime(content);
 
   return {
     props: {
@@ -39,6 +40,7 @@ export async function getStaticProps({ params }) {
         ...item,
         content,
       },
+      readingTime,
     },
   };
 }
