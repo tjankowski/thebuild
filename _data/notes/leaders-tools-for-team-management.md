@@ -1,20 +1,30 @@
 ---
 title: "Leaders tools for team management"
 excerpt: ""
-date: "2020-03-16T05:35:07.322Z"
+date: "2021-01-10"
 category: ["Post"]
 tags: ["tools", "leadership"]
 ---
 
-1. Context & introduction
+## Tools
 
-- time range
-- role description
-- team structure
+Here is the list of the tools that I had in my toolset.
 
-2. Tools
-
-- retrospective
 - 1on1s
+- retrospective
+- 1 day per month for research and personal development
 - training budget
--
+
+### 1on1s
+
+adwadwdawd
+
+### Retroscpective
+
+dawdawdawd
+
+### Research and personal growth
+
+adwadwdawa
+
+### Training budget
